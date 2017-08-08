@@ -3,7 +3,11 @@
 <ul>
   <% @tasks.each do |task| %>
     <li>
-      <%= task.content  %>
+      <h2><%= task.content  %> </h2>
+      <p>Fait : <%= task.done? ? "[X]" : "[ ]"%> </p>
+      <%= link_to "Voir la tache", task_path(task)  %>
+      <%= link_to "Modifier la tache", edit_task_path(task) %>
+      <%= link_to "Supprimer la tache", task_path(task), method: :delete %>
 
     </li>
   <% end %>
