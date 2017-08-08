@@ -1,5 +1,8 @@
 <h1> <%= @task.content  %> </h1>
 <p>La tache a été faite : <%= @task.done? ? "OUI" : "NON" %> </p>
 <p>Elle a été créée le <%= @task.created_at %></p>
+<p>modifiée le : <%= @task.updated_at  %></p>
 
 <%= link_to "Liste des taches", tasks_path  %>
+<%= link_to "Modifier la tache", edit_task_path(@task) %>
+<%= link_to "Supprimer la tache", task_path(@task), method: :delete %>

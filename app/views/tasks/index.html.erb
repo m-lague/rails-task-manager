@@ -1,13 +1,15 @@
 <h1>Listes des taches</h1>
 
+<%= link_to "Ajouter une tache", new_task_path %>
 <ul>
   <% @tasks.each do |task| %>
     <li>
+
       <h2><%= task.content  %> </h2>
-      <p>Fait : <%= task.done? ? "[X]" : "[ ]"%> </p>
       <%= link_to "Voir la tache", task_path(task)  %>
       <%= link_to "Modifier la tache", edit_task_path(task) %>
       <%= link_to "Supprimer la tache", task_path(task), method: :delete %>
+      <input type="checkbox" >
 
     </li>
   <% end %>
